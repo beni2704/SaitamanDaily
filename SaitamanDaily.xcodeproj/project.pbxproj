@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D894BF429CD920F00B908C9 /* questMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D894BF329CD920F00B908C9 /* questMenu.swift */; };
 		B1D3521629C972DA006D112E /* SaitamanDailyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3521529C972DA006D112E /* SaitamanDailyApp.swift */; };
 		B1D3521829C972DA006D112E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3521729C972DA006D112E /* ContentView.swift */; };
 		B1D3521A29C972DC006D112E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1D3521929C972DC006D112E /* Assets.xcassets */; };
@@ -37,7 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4D894BF329CD920F00B908C9 /* questMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questMenu.swift; sourceTree = "<group>"; };
 		B1D3521229C972DA006D112E /* SaitamanDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaitamanDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1D3521529C972DA006D112E /* SaitamanDailyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaitamanDailyApp.swift; sourceTree = "<group>"; };
 		B1D3521729C972DA006D112E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 				B1D3521529C972DA006D112E /* SaitamanDailyApp.swift */,
 				B1D3521729C972DA006D112E /* ContentView.swift */,
 				B1D3524129C97C24006D112E /* HomeView.swift */,
-				4D894BF329CD920F00B908C9 /* questMenu.swift */,
 				B1D3521929C972DC006D112E /* Assets.xcassets */,
 				B1D3521B29C972DC006D112E /* Preview Content */,
 				B1D3523F29C97AD1006D112E /* QuestView.swift */,
@@ -267,7 +264,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1D3521829C972DA006D112E /* ContentView.swift in Sources */,
-				4D894BF429CD920F00B908C9 /* questMenu.swift in Sources */,
 				B1D3524229C97C24006D112E /* HomeView.swift in Sources */,
 				B1D3521629C972DA006D112E /* SaitamanDailyApp.swift in Sources */,
 				B1D3524029C97AD1006D112E /* QuestView.swift in Sources */,
