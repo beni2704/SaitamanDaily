@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 struct HomeView: View {
     @Binding var currentDisplay:DisplayedScreen
     @Binding var cCoin:Int
@@ -24,24 +22,26 @@ struct HomeView: View {
         AvatarModel(displayAvatar: "skin5", unlock: false, price: 100)
     ]
     @State var isModalPresented = false
-    @State private var showTutorial = false
-    
+    @State var showTutorial = false
+    @State var bubbleList = ["bubble-1","bubble-2","bubble-3"]
+    @State var currBubble = "bubble-1"
     var body: some View{
         HStack{
             Spacer()
             VStack{
-                Image("quest")
-                    .resizable()
-                    .frame(width: 32.0, height: 32.0)
-                Image("camera")
-                    .resizable()
-                    .frame(width: 32.0, height: 32.0)
+                Button(action: {
+                    currentDisplay = .quest
+                }) {
+                    Image("quest")
+                        .resizable()
+                        .frame(width: 42.0, height: 42.0)
+                }
                 Button(action: {
                     showTutorial=true
                 }) {
                     Image("tutorial")
                         .resizable()
-                        .frame(width: 32.0, height: 32.0)
+                        .frame(width: 42.0, height: 42.0)
                 }
                 .sheet(isPresented: $showTutorial) {
                     ModalView()
@@ -49,14 +49,25 @@ struct HomeView: View {
                 Spacer()
             }
             .padding(.horizontal,8)
-            Image("bubble-saitama")
+            Image(currBubble)
                 .resizable()
         }
         .padding(.top,10)
-        Image(displayAvatar)
-            .resizable()
-            .scaledToFit()
-            .frame(width: 200, height: 400)
+        Button(action: {
+            if currBubble == bubbleList[0]{
+                currBubble = bubbleList[1]
+            }else if currBubble == bubbleList[1]{
+                currBubble = bubbleList[2]
+            }else if currBubble == bubbleList[2]{
+                currBubble = bubbleList[0]
+            }
+        }) {
+            Image(displayAvatar)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 200, height: 400)
+        }
+        
         
         HStack{
             ForEach(Array(avatars.enumerated()),id:\.1) { index,avatar in
@@ -96,9 +107,6 @@ struct HomeView: View {
                         .stroke(.black)
                 )
                 .padding(.horizontal,5)
-                if index==1{
-                    
-                }
             }
             
         }
@@ -126,10 +134,20 @@ struct ModalView: View {
 
     var body: some View {
         VStack {
-            Text("This is a tutorial.")
+            Text("Welcome to Saitama App")
+                .font(.title)
+                .padding()
+            Text("This app is a simulator and tutorial on how to train and become like Saitama, you can use the quest button to see upcoming and finished quest to gain coins, the quest will be reseted daily, below the character, you can see the store, from there you can change your costume and unlock new costume using the coins you gained")
+                .font(.title3)
+                .multilineTextAlignment(.center)
+                .padding()
             Button("Understand") {
                 presentationMode.wrappedValue.dismiss()
             }
+            .padding()
+            .background(.blue)
+            .foregroundColor(.white)
+            .cornerRadius(20)
         }
         .padding()
         .background(Color.white)
@@ -144,6 +162,7 @@ struct CustomPopupView: View {
     @Binding var cCoin:Int
     @Binding var avatars:[AvatarModel]
     @Binding var currIdx:Int
+    @State private var showAlert = false
     var body: some View {
         VStack {
             Text("Buy this skin?")
@@ -157,9 +176,13 @@ struct CustomPopupView: View {
             }
             HStack{
                 Button("Buy") {
-                    cCoin -= avatars[currIdx].price
-                    avatars[currIdx].unlock.toggle()
-                    self.isPresented = false
+                    if cCoin-avatars[currIdx].price < 0 {
+                        showAlert = true
+                    }else {
+                        cCoin -= avatars[currIdx].price
+                        avatars[currIdx].unlock.toggle()
+                        self.isPresented = false
+                    }
                 }
                 .padding()
                 .background(.green)
@@ -181,5 +204,8 @@ struct CustomPopupView: View {
         .cornerRadius(10)
         .shadow(radius: 5)
         .frame(width: 300, height: UIScreen.main.bounds.height * 0.25)
+        .alert(isPresented: $showAlert){
+            Alert(title: Text("Warning"), message: Text("You don't have enough coin to buy this skin"), dismissButton: .default(Text("OK")))
+        }
     }
 }

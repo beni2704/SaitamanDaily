@@ -13,11 +13,21 @@ enum DisplayedScreen{
 }
 
 struct ContentView: View {
-    @State var cCoin = 5000
+    @State var cCoin = 0
     @State var currentDisplay: DisplayedScreen = .home
     var body: some View {
         VStack {
             HStack{
+                if currentDisplay != .home{
+                    Button(action: {
+                        currentDisplay = .home
+                    }) {
+                        Image(systemName: "arrowshape.backward.fill")
+                            .resizable()
+                            .frame(width: 32.0, height: 32.0)
+                            .foregroundColor(.black)
+                    }
+                }
                 Spacer()
                 Text("C")
                     .padding(8)
@@ -33,7 +43,7 @@ struct ContentView: View {
             case .home:
                 HomeView(currentDisplay: $currentDisplay,cCoin:$cCoin)
             case .quest:
-                QuestView()
+                QuestView(cCoin:$cCoin)
             }
             Spacer()
         }
