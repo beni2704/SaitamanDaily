@@ -126,8 +126,8 @@ struct ModalView: View {
 
     var body: some View {
         VStack {
-            Text("This is a tutorial.")
-            Button("Understand") {
+            Text("Wellcome to Saitama App.")
+            Button("This app is a simulator and tutorial on how to train and become like Saitama, you can use the quest button to see upcoming and finished quest to gain coins, the quest will be reseted daily, below the character, you can see the store, from there you can change your costume and unlock new costume using the coins you gained") {
                 presentationMode.wrappedValue.dismiss()
             }
         }
