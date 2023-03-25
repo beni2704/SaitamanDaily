@@ -13,7 +13,7 @@ enum DisplayedScreen{
 }
 
 struct ContentView: View {
-    @State var cCoin = 0
+    @State var cCoin = 5000
     @State var currentDisplay: DisplayedScreen = .home
     var body: some View {
         VStack {
@@ -31,7 +31,7 @@ struct ContentView: View {
             Spacer()
             switch currentDisplay {
             case .home:
-                HomeView(currentDisplay: $currentDisplay)
+                HomeView(currentDisplay: $currentDisplay,cCoin:$cCoin)
             case .quest:
                 QuestView()
             }

@@ -16,6 +16,8 @@
 		B1D3523329C972DC006D112E /* SaitamanDailyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3523229C972DC006D112E /* SaitamanDailyUITestsLaunchTests.swift */; };
 		B1D3524029C97AD1006D112E /* QuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3523F29C97AD1006D112E /* QuestView.swift */; };
 		B1D3524229C97C24006D112E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3524129C97C24006D112E /* HomeView.swift */; };
+		B1D3524429CDD5BF006D112E /* AvatarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3524329CDD5BF006D112E /* AvatarModel.swift */; };
+		B1D3524629CDDAEC006D112E /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3524529CDDAEC006D112E /* testView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		B1D3523229C972DC006D112E /* SaitamanDailyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaitamanDailyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B1D3523F29C97AD1006D112E /* QuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestView.swift; sourceTree = "<group>"; };
 		B1D3524129C97C24006D112E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B1D3524329CDD5BF006D112E /* AvatarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarModel.swift; sourceTree = "<group>"; };
+		B1D3524529CDDAEC006D112E /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 				B1D3521929C972DC006D112E /* Assets.xcassets */,
 				B1D3521B29C972DC006D112E /* Preview Content */,
 				B1D3523F29C97AD1006D112E /* QuestView.swift */,
+				B1D3524329CDD5BF006D112E /* AvatarModel.swift */,
+				B1D3524529CDDAEC006D112E /* testView.swift */,
 			);
 			path = SaitamanDaily;
 			sourceTree = "<group>";
@@ -265,6 +271,8 @@
 			files = (
 				B1D3521829C972DA006D112E /* ContentView.swift in Sources */,
 				B1D3524229C97C24006D112E /* HomeView.swift in Sources */,
+				B1D3524629CDDAEC006D112E /* testView.swift in Sources */,
+				B1D3524429CDD5BF006D112E /* AvatarModel.swift in Sources */,
 				B1D3521629C972DA006D112E /* SaitamanDailyApp.swift in Sources */,
 				B1D3524029C97AD1006D112E /* QuestView.swift in Sources */,
 			);
@@ -439,7 +447,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Beni.SaitamanDaily;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.SaitamanDaily;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -472,7 +480,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Beni.SaitamanDaily;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apple.SaitamanDaily;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
